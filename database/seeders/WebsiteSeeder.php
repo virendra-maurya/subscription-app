@@ -12,6 +12,7 @@ class WebsiteSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\Website::factory()->create(['sub_domain' => 'default', 'name' => 'default']);
         \App\Models\Website::factory()->count(2)->create();
     }
 }

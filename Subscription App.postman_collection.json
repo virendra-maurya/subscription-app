@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "c4a828de-c6d3-4cf4-b0f9-6bda47eff656",
+		"name": "Subscription App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29092671"
+	},
+	"item": [
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "this is text",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is text",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "{{test_user_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}{{test_website_sub_domain}}/post",
+					"host": [
+						"{{base_url}}{{test_website_sub_domain}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "VR",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "vr1@mail.comss",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}{{test_website_sub_domain}}/subscribe",
+					"host": [
+						"{{base_url}}{{test_website_sub_domain}}"
+					],
+					"path": [
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://subscription-app.test/api/",
+			"type": "string"
+		},
+		{
+			"key": "test_website_sub_domain",
+			"value": "default",
+			"type": "string"
+		},
+		{
+			"key": "test_user_id",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
