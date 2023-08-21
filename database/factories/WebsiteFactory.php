@@ -17,7 +17,9 @@ class WebsiteFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'sub_domain' => fake()->domainWord(),
+            'name' => fake()->domainName(),
+            'is_active' => 1
         ];
     }
 }

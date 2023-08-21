@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Website::class);
+            $table->json('data')->nullable();
             $table->timestamps();
 
             $table->index(['user_id', 'website_id']);

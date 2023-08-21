@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Website;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,8 +19,9 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
+            'creator_id' => User::inRandomOrder()->value('id'),
             'website_id' => Website::inRandomOrder()->value('id'),
-            'title' => fake()->title,
+            'title' => fake()->sentence(10),
             'description' => fake()->sentence(500),
         ];
     }
